@@ -6,7 +6,9 @@ graph = {
     'C': [('E', 3)],
     'D': [('F', 7)],
     'E': [('F', 2)],
-    'F': []
+    'F': [('G', 6),( 'H', 3)],
+    'G': [('I', 5)],
+    'H': []
 }
 
 def best_first(graph, start, goal):
@@ -30,4 +32,5 @@ def best_first(graph, start, goal):
 
 # Example usage: 
 print("Best-First Search Path:")
-best_first(graph, 'A', 'F')
+best_first(graph, 'A', 'G') #algorithm expands the nodes in order of their heuristic value
+
