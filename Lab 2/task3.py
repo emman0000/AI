@@ -1,4 +1,4 @@
-import emoji
+import emoji #i just like using them :) !
 from collections import deque
 
 # Tree Representation
