@@ -57,3 +57,31 @@ AI-powered dishwashers for home use exist, but they do **not manually unload dis
 
 - The **sheer cost and risk** of installing hardware that does not yet exist at a **commercially viable level**.  
 - Variability in **kitchen layouts and dish arrangements**, making it difficult to develop a generalize
+
+
+
+# Q4
+## **An agent that senses only partial information about the state cannot be perfectly rational**
+False
+AI models depend on techniques such as fuzzy logic, probabilistic reasoning and many more powerful tools that enable them to navigate uncertainty. An interesting example is the Inventory management AI deployed at a leading US departmental store "WALMART"; their recent inventory model can accurately predict stock demand and reorder products considering certain trends' uncertainty.
+
+## **There exist task environments in which no pure reflex agent can behave rationally**
+True
+In the case of a more sophisticated environment, a reflex agent would prove moot. This is primarily because reflex agents only operate on an immediate percept reception scenario; they only take into account any current stimuli generated rather than a chain of events. For example, a game-playing agent that plays against an opponent in any skill-based game must keep track of previous plays to make an informed decision
+
+## **There exists a task environment in which every agent is rational**
+ it is impossible to construct an environment where every agent is rational. Rationality is a property that depends on the agent's design, goals, and environment, and not all agents can meet these criteria simultaneously. For instance, an agent that is engaged in a game of tic tac toe; n tic-tac-toe, if both players are perfectly rational and play optimally, the game will always end in a draw. However, this is a very specific and idealized scenario. In reality, not all agents will be perfectly rational, and the presence of irrational agents is what makes the game dynamic and interesting.
+
+ ## **The input to an agent program is the same as the input to the agent function**
+ False
+ A function is structured logically to perceive the input. The function is an aspect of the overall program so while it may only provide one desired outcome, the program itself might be engaged in maintaining other features that complement the function and the overall output of the software/hardware. A Thermostat agent for example may have a function that turns the heat up and down according to the environment. On the other hand, the entirety of the program may simultaneously be engaged in timing the cooling system, managing the efficiency etc.
+
+ ## **Every agent function is implementable by some program/machine combination**
+False
+Some agent functions may require infinite memory or computational resources, making them impractical or impossible to implement. An agent that perfectly predicts stock market prices would need unlimited computational power, which is infeasible.
+
+## **Suppose an agent selects its action uniformly at random from the set of possible actions. There exists a deterministic task environment in which this agent is rational**
+True
+
+## **It is possible for a given agent to be perfectly rational in two distinct task environments.
+True.
