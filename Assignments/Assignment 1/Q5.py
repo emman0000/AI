@@ -1,6 +1,8 @@
 import heapq
 from collections import deque
+import emoji
 
+#map of romania with the distances between the cities
 romania = { 
     "Arad": [("Zerind", 75), ("Sibiu", 140), ("Timisoara", 118)],
     "Zerind": [("Arad", 75), ("Oradea", 71)],
@@ -23,14 +25,14 @@ romania = {
     "Iasi": [("Vaslui", 92), ("Neamt", 87)],
     "Neamt": [("Iasi", 87)]
 }
-
+#heuristic values for the cities used by the search algorithms
 heuristic = {"Arad": 366, "Zerind": 374, "Oradea": 380, "Sibiu": 253, "Timisoara": 329, "Lugoj": 244, "Mehadia": 241, 
              "Drobeta": 242, "Craiova": 160, "Rimnicu Vilcea": 193, "Pitesti": 100, "Fagaras": 176, "Bucharest": 0, "Giurgiu": 77,
              "Urziceni": 80, "Hirsova": 151, "Eforie": 161, "Vaslui": 199, "Iasi": 226, "Neamt": 234}
 
-# BFS with Path Cost Calculation
+# BFS 
 def bfs(start, goal):
-    queue = deque([([start], 0)])  # (path, cost)
+    queue = deque([([start], 0)])  
     visited = set()
 
     while queue:
@@ -38,7 +40,7 @@ def bfs(start, goal):
         node = path[-1]
 
         if node == goal:
-            return path, cost  # Return path and total cost
+            return path, cost 
 
         if node not in visited:
             visited.add(node)
@@ -47,11 +49,12 @@ def bfs(start, goal):
                 new_cost = cost + edge_cost
                 queue.append((path + [neighbor], new_cost))
 
-    return None, float('inf')  # No path found
+    return None, float('inf')  
 
-# UCS (already returns cost)
+# UCS is designed to calculate the cost regardless of the path
+# It will always return the shortest path
 def UCS(start, goal):
-    queue = [(0, [start])]  # (cost, path)
+    queue = [(0, [start])] 
     visited = set()
 
     while queue:
@@ -59,7 +62,7 @@ def UCS(start, goal):
         node = path[-1]
 
         if node == goal:
-            return path, cost  # Return path and total cost
+            return path, cost  
 
         if node not in visited:
             visited.add(node)
@@ -68,11 +71,12 @@ def UCS(start, goal):
                 new_cost = cost + edge_cost
                 heapq.heappush(queue, (new_cost, path + [neighbor]))
 
-    return None, float('inf')  # No path found
+    return None, float('inf')  
 
-# Greedy Best First Search (GBFS) - No Cost Calculation Needed
+# Greedy Best First Search (GBFS)
+#will use the heuristic value to determine the next node to visit
 def gBFS(start, goal):
-    queue = [(heuristic[start], [start], 0)]  # (heuristic, path, cost)
+    queue = [(heuristic[start], [start], 0)]  
     visited = set()
 
     while queue:
@@ -80,7 +84,7 @@ def gBFS(start, goal):
         node = path[-1]
 
         if node == goal:
-            return path, cost  # Return path and total cost
+            return path, cost  
 
         if node not in visited:
             visited.add(node)
@@ -88,32 +92,37 @@ def gBFS(start, goal):
             for neighbor, edge_cost in romania.get(node, []):
                 heapq.heappush(queue, (heuristic[neighbor], path + [neighbor], cost + edge_cost))
 
-    return None, float('inf')  # No path found
+    return None, float('inf')  
 
-# Iterative Deepening Search (IDS) with Cost Calculation
+# Iterative Deepening Search
+
 def iterative(start, goal, max_depth=10):
     def dls(node, path, cost, depth):
-        if depth == 0 and node == goal:
-            return path, cost  # If depth reached and goal is found
+        if node == goal:
+            return path, cost  #If end of the path is reached 
+        
+        if depth == 0:
+            return None  
+        
+        for neighbor, edge_cost in romania.get(node, []):
+            if neighbor not in path:
+                result = dls(neighbor, path + [neighbor], cost + edge_cost, depth - 1)
+                if result:
+                    return result  
+        
+        return None 
 
-        if depth > 0:
-            for neighbor, edge_cost in romania.get(node, []):
-                if neighbor not in path:
-                    result = dls(neighbor, path + [neighbor], cost + edge_cost, depth - 1)
-                    if result:
-                        return result  # Return first successful path found
-
-        return None, float('inf')  # No path found at this depth
-
-    for depth in range(max_depth):  # Increase depth iteratively
-        result, cost = dls(start, [start], 0, depth)
+    for depth in range(max_depth): 
+        result = dls(start, [start], 0, depth)
         if result:
-            return result, cost
+            return result  
 
-    return None, float('inf')  # No path found within depth limit
+    return None, float('inf')  
 
-# Running all algorithms and comparing costs
-start, goal = "Arad", "Bucharest"
+
+#input from user
+start = input("Enter start city: ")
+goal = input("Enter goal city: ")
 
 results = [
     ("BFS", *bfs(start, goal)),
@@ -122,9 +131,10 @@ results = [
     ("IDS", *iterative(start, goal))
 ]
 
-# Sorting results based on path cost in ascending order
-sorted_results = sorted(results, key=lambda x: x[2])  # Sort by cost (third element in tuple)
-
-# Printing results
+sorted_results = sorted(results, key=lambda x: x[2])  
+# Getting the best search (
+best_cost = sorted_results[0][2]  
+# Printing results with the best one marked
 for name, path, cost in sorted_results:
-    print(f"{name}: Path = {path}, Cost = {cost}")
+    marker = "\U0001F3C6" if cost == best_cost else ""  # Add a winner trophy emoji if it's the best
+    print(f"{name}: Path = {path}, Cost = {cost} {marker}")
