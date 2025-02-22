@@ -112,7 +112,8 @@ True.
 In the case of a more sophisticated environment, a reflex agent would prove moot. This is primarily because reflex agents only operate on an immediate percept reception scenario; they only take into account any current stimuli generated rather than a chain of events. For example, a game-playing agent that plays against an opponent in any skill-based game must keep track of previous plays to make an informed decision
 
 ## **There exists a task environment in which every agent is rational**
-True
+True.
+
 In certain cases where there is only one certain outcome. Or the probability of one event occurring over another is in fact 1; then it is safe to conclude that in these environments every agent is bound to be rational. A good example would be a traffic signal; every agent involved will cater to bring the same outcome to the intersection to only have one road's traffic flowing and all others stopped.
 
  ## **The input to an agent program is the same as the input to the agent function**
