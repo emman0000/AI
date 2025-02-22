@@ -10,6 +10,7 @@
 
 ![Screenshot 2025-02-22 172117](https://github.com/user-attachments/assets/6b88e79e-9c36-40f0-b0a7-ca62a83c5be1)
 
+### if a city not from the map is used then this is output returned
 
 ![Screenshot 2025-02-22 173501](https://github.com/user-attachments/assets/3ac8db00-7b70-4efc-9d8e-fe0b27be8489)
 
