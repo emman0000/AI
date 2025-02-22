@@ -58,6 +58,24 @@ AI-powered dishwashers for home use exist, but they do **not manually unload dis
 - The **sheer cost and risk** of installing hardware that does not yet exist at a **commercially viable level**.  
 - Variability in **kitchen layouts and dish arrangements**, making it difficult to develop a generalize
 
+#  Q3
+## **Domain : Stock Trading**
+
+An interesting domain where automated trading bots can be used to not only process and analyse statistical and financial data but also predict the trend a particular market will follow. Consequently, a more trained and reliable version would also execute the purchasing or selling of stock.
+## Stock Trading Environment Characterization
+
+| **Property**      | **Stock Trading Environment** | **Explanation** |
+|------------------|----------------------------|----------------|
+| **Accessible**  | ❌ No (Inaccessible)       | The agent does not have complete information (e.g., insider trading data, future events). |
+| **Deterministic?** | ❌ No (Stochastic)         | Stock prices are affected by unpredictable factors like news, investor behavior, and economic events. |
+| **Episodic?**    | ❌ No (Sequential)         | Each trade affects future decisions (e.g., holding or selling stocks later depends on previous trades). |
+| **Static?**      | ❌ No (Dynamic)            | Stock prices, market trends, and external factors constantly change in real-time. |
+| **Continuous?**  | ✅ Yes (Continuous)       | Prices, trade volumes, and market trends change continuously rather than in fixed steps. |
+
+### Summary
+The **stock trading environment** is **inaccessible, stochastic, sequential, dynamic, and continuous**.  
+A **learning-based agent** is best suited to handle this complex and unpredictable environment. This is so that the agent can familiarize itself with the dynamic nature of the market rather than rely on trends that almost always seem unreliable. 
+However certain features for example the reaction to sudden changes would prove to be better governed by a **model-based reflex agent**.
 
 
 # Q4
@@ -70,7 +88,7 @@ True
 In the case of a more sophisticated environment, a reflex agent would prove moot. This is primarily because reflex agents only operate on an immediate percept reception scenario; they only take into account any current stimuli generated rather than a chain of events. For example, a game-playing agent that plays against an opponent in any skill-based game must keep track of previous plays to make an informed decision
 
 ## **There exists a task environment in which every agent is rational**
- it is impossible to construct an environment where every agent is rational. Rationality is a property that depends on the agent's design, goals, and environment, and not all agents can meet these criteria simultaneously. For instance, an agent that is engaged in a game of tic tac toe; n tic-tac-toe, if both players are perfectly rational and play optimally, the game will always end in a draw. However, this is a very specific and idealized scenario. In reality, not all agents will be perfectly rational, and the presence of irrational agents is what makes the game dynamic and interesting.
+It is impossible to construct an environment where every agent is rational. Rationality is a property that depends on the agent's design, goals, and environment, and not all agents can meet these criteria simultaneously. For instance, an agent that is engaged in a game of tic tac toe; n tic-tac-toe, if both players are perfectly rational and play optimally, the game will always end in a draw. However, this is a very specific and idealized scenario. In reality, not all agents will be perfectly rational, and the presence of irrational agents is what makes the game dynamic and interesting.
 
  ## **The input to an agent program is the same as the input to the agent function**
  False
@@ -83,5 +101,5 @@ Some agent functions may require infinite memory or computational resources, mak
 ## **Suppose an agent selects its action uniformly at random from the set of possible actions. There exists a deterministic task environment in which this agent is rational**
 True
 
-## **It is possible for a given agent to be perfectly rational in two distinct task environments.
+## **It is possible for a given agent to be perfectly rational in two distinct task environments.**
 True.
