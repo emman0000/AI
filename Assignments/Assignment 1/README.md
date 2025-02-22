@@ -112,7 +112,8 @@ True.
 In the case of a more sophisticated environment, a reflex agent would prove moot. This is primarily because reflex agents only operate on an immediate percept reception scenario; they only take into account any current stimuli generated rather than a chain of events. For example, a game-playing agent that plays against an opponent in any skill-based game must keep track of previous plays to make an informed decision
 
 ## **There exists a task environment in which every agent is rational**
-It is impossible to construct an environment where every agent is rational. Rationality is a property that depends on the agent's design, goals, and environment, and not all agents can meet these criteria simultaneously. For instance, an agent that is engaged in a game of tic tac toe; n tic-tac-toe, if both players are perfectly rational and play optimally, the game will always end in a draw. However, this is a very specific and idealized scenario. In reality, not all agents will be perfectly rational, and the presence of irrational agents is what makes the game dynamic and interesting.
+True
+In certain cases where there is only one certain outcome. Or the probability of one event occurring over another is in fact 1; then it is safe to conclude that in these environments every agent is bound to be rational. A good example would be a traffic signal; every agent involved will cater to bring the same outcome to the intersection to only have one road's traffic flowing and all others stopped.
 
  ## **The input to an agent program is the same as the input to the agent function**
  False.
