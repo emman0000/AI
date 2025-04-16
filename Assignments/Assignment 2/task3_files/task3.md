@@ -42,15 +42,13 @@ More readable but not efficient.
 
 
 
-Version | Time Taken (1 puzzle) | Notes
-My CSP (AC3) | 0.34s | Uses AC3 + backtracking
-OR-Tools | 0.01s | Extremely optimized
-GitHub/Basic | 0.12s | Simple recursive backtracking only
 
+## Differences Between Versions
 
-Feature | My Version | OR-Tools | GitHub/Basic
-Constraint Propagation | AC-3 | Built-in |  None
-Heuristics (MRV, etc.) | Yes (MRV) | Advanced (hidden) |  None
-Speed | Medium | Fastest | Slow
-Customizability | High | Lower (black box) | High
-Code Simplicity | Medium | Medium | Very simple
+| Feature                  | My Version        | OR-Tools          | GitHub Version |
+|--------------------------|-------------------|--------------------|---------------------------|
+| Constraint Propagation   | AC-3              | Built-in           | None                      |
+| Heuristics (MRV, etc.)   | MRV               | Internal           | None                      |
+| Speed                    | Medium            | Fast               | Slow                      |
+| Customizability          | High              | Moderate           | High                      |
+| Code Simplicity          | Medium            | Medium             | Very Simple               |
