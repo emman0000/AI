@@ -9,7 +9,7 @@ Solves puzzles from a file and writes solutions back.
 
 Includes timing using time.time().
 
-![Screenshot 2025-04-26 221237](https://github.com/user-attachments/assets/0229eccb-c643-4401-8743-a5a8d619410a)
+![Screenshot 2025-04-26 221707](https://github.com/user-attachments/assets/ae107590-a2df-4839-9669-58a4aa75081f)
 
 
 ### 2. Google OR-Tools Version
