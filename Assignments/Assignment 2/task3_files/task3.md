@@ -9,7 +9,7 @@ Solves puzzles from a file and writes solutions back.
 
 Includes timing using time.time().
 
-![Screenshot 2025-04-16 183134](https://github.com/user-attachments/assets/8ed398d6-2bfc-47fa-8986-f31fd3d6db84)
+![Screenshot 2025-04-26 221237](https://github.com/user-attachments/assets/0229eccb-c643-4401-8743-a5a8d619410a)
 
 
 ### 2. Google OR-Tools Version
@@ -21,7 +21,8 @@ Constraints are added via high-level modelling (AddAllDifferent).
 
 Automatically uses propagation and search strategies internally.
 
-![Screenshot 2025-04-16 183100](https://github.com/user-attachments/assets/c507bde3-30ee-41b4-b677-f580b3067df4)
+![Screenshot 2025-04-26 221250](https://github.com/user-attachments/assets/4b0c8052-cf19-462a-a2b1-a51e1102ce24)
+
 
 ### 3. GitHub / ChatGPT Version
 Pure backtracking.
@@ -32,8 +33,7 @@ Slower, especially for harder puzzles.
 
 More readable but not efficient.
 
-![Screenshot 2025-04-16 183716](https://github.com/user-attachments/assets/f23c2f32-d3a2-4dcb-abea-ce08c907c266)
-
+![Screenshot 2025-04-26 221302](https://github.com/user-attachments/assets/bcf5b7d3-f54d-4462-825f-1283fa4760cb)
 
 
 
@@ -51,21 +51,11 @@ More readable but not efficient.
 | Code Simplicity          | Medium            | Medium             | Very Simple               |
 
 
-
-*Note: Modifications were made to the Github version of the code to enable it to run multiple boards of puzzles which were hardcoded to avoid changing the code too much entirely
-
-## Solving 3 Puzzles at a time
-### My Version:
-![Screenshot 2025-04-16 190235](https://github.com/user-attachments/assets/59c04ae9-9866-40fa-a365-0afc91f71029)
-
-### Google OR Tools:
-![Screenshot 2025-04-16 190200](https://github.com/user-attachments/assets/86cf2cd0-f79a-41a5-801c-d7962bdc2cd9)
-
-### Github: 
-![Screenshot 2025-04-16 190911](https://github.com/user-attachments/assets/6e1f7ae5-a7d3-483a-8eda-ff745fd8d730)
+![Screenshot 2025-04-26 221311](https://github.com/user-attachments/assets/174e384a-66b6-4c48-97bc-5b61f824c98a)
 
 
 ### How Can I Improve My Version?
+
 Add degree heuristic or least-constraining value ordering.
 Add forward checking after assignment.
 Use a deque for AC-3 queue for performance.
