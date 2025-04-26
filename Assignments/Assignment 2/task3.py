@@ -2,8 +2,7 @@
 
 import time
 from ortools.sat.python import cp_model
-
-# ========== Reading the puzzles ===========
+#read puzles
 def read_puzzles(filename):
     with open(filename, 'r') as f:
         return [line.strip() for line in f if len(line.strip()) == 81]
@@ -156,7 +155,7 @@ def print_solution(solution):
 
 #My method
 your_start = time.time()
-print("\n==== Solving with YOUR Version ====")
+print("\n==== Solving with My Version ====")
 your_solutions = []
 for idx, p in enumerate(puzzles):
     print(f"\nPuzzle {idx+1}:")
@@ -190,6 +189,6 @@ git_end = time.time()
 # ========== TIME COMPARISON ===========
 
 print("\n======= TIME COMPARISON =======")
-print(f"Your Version Time: {round(your_end - your_start, 4)} seconds")
+print(f"My Version Time: {round(your_end - your_start, 4)} seconds")
 print(f"Google OR Tools Time: {round(or_end - or_start, 4)} seconds")
 print(f"GitHub Version Time: {round(git_end - git_start, 4)} seconds")
