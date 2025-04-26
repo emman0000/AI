@@ -51,10 +51,11 @@ More readable but not efficient.
 | Code Simplicity          | Medium            | Medium             | Very Simple               |
 
 
-![Screenshot 2025-04-26 221311](https://github.com/user-attachments/assets/174e384a-66b6-4c48-97bc-5b61f824c98a)
+![Screenshot 2025-04-26 221941](https://github.com/user-attachments/assets/2b201a6f-a574-492e-8ad8-c6164db8e9eb)
 
 
 ### How Can I Improve My Version?
+
 
 Add degree heuristic or least-constraining value ordering.
 Add forward checking after assignment.
